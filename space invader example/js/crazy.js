@@ -166,33 +166,30 @@ function draw() {
 }
 
 function moveAlien(){
-		for (var i=0; i < alienList.length; i++){
-			if (alienList[i].x > 1000) {
-				alienList[i].x -= (Math.floor((Math.random()*10)+1));
-			}
-			if (alienList[i].x < 10) {
-				alienList[i].x += (Math.floor((Math.random()*10)+1));
-			}
-
-			if (alienList[i].y < 10) {
-				alienList[i].y += (Math.floor((Math.random()*10)+1)) / 10;
-			}
-
-			if (Math.round(Math.random()) == 1){
-				alienList[i].x += (Math.floor((Math.random()*10)+1)) / 4;
-			} else {
-				alienList[i].x -= (Math.floor((Math.random()*10)+1)) / 4;
-			}
-
-			if (Math.round(Math.random()) == 1){
-				alienList[i].y += (Math.floor((Math.random()*10)+1)) / 9;
-			} else {
-				alienList[i].y -= (Math.floor((Math.random()*10)+1)) / 10;
-			}
-
-
+	for (var i=0; i < alienList.length; i++){
+		if (alienList[i].x > 1000) {
+			alienList[i].x -= (Math.floor((Math.random()*10)+1));
 		}
-	
+		if (alienList[i].x < 10) {
+			alienList[i].x += (Math.floor((Math.random()*10)+1));
+		}
+
+		if (alienList[i].y < 10) {
+			alienList[i].y += (Math.floor((Math.random()*10)+1)) / 10;
+		}
+
+		if (Math.round(Math.random()) == 1){
+			alienList[i].x += (Math.floor((Math.random()*10)+1)) / 4;
+		} else {
+			alienList[i].x -= (Math.floor((Math.random()*10)+1)) / 4;
+		}
+
+		if (Math.round(Math.random()) == 1){
+			alienList[i].y += (Math.floor((Math.random()*10)+1)) / 9;
+		} else {
+			alienList[i].y -= (Math.floor((Math.random()*10)+1)) / 10;
+		}
+	}
 }
 
 function laser(w, h){

@@ -50,8 +50,10 @@ window.onload = function(){
 
 	createAlien(alienList);
 	// draw moveable cannon
-	intervalId = setInterval(draw, 5);
-	//bgm.play();
+	// =================================
+	// TODO: draw objects on the canvas.
+
+	// ==========End of TODO============
 }
 
 function keyAction(event){
@@ -105,12 +107,6 @@ function clear() {
 	context.clearRect(0, 0, WIDTH, HEIGHT);
 }
 
-
-//function cannonDraw() {
-//	clear();
-//	context.drawImage(imageObj, x, y);
-//}
-
 function draw() {
 	clear();
 
@@ -134,9 +130,6 @@ function draw() {
 			context.drawImage(alienImg4, alienList[i].x, alienList[i].y);
 		} 
 	}
-
-	moveAlien();
-
 
 	// draw laser
 	if (fire == true){
@@ -166,29 +159,8 @@ function draw() {
 }
 
 function moveAlien(){
-	if (direction == 0) {		// go right
-		movecood += 0.1 * level;
-		for (var i=0; i < alienList.length; i++){
-			alienList[i].x += 0.1 * level;
-		}		
-		if (movecood >= 100){
-			direction = 1;		// turn left
-			for (var i=0; i < alienList.length; i++){
-				alienList[i].y += 10;
-			}
-		}
-	} else if (direction == 1) {// go left
-		movecood -= 0.1 * level;
-		for (var i=0; i < alienList.length; i++){
-			alienList[i].x -= 0.1 * level;
-		}
-		if (movecood <= 50){
-			direction = 0;		// turn right
-			for (var i=0; i < alienList.length; i++){
-				alienList[i].y += 10;
-			}
-		}
-	}
+	// add function here to move alien
+
 }
 
 function laser(w, h){

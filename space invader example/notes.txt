@@ -1,0 +1,89 @@
+
+--------------------------------------------
+part 2 answer
+line 55:
+intervalId = setInterval(draw, 5);
+
+--------------------------------------------
+part 3 answer
+line 140:
+moveAlien();
+
+line 171:
+function moveAlien(){
+	// add function here to move alien
+	movecood += 0.1;
+	for (var i=0; i < alienList.length; i++){
+		alienList[i].x += 0.1;
+	}		
+}
+
+line 171 phase 2:
+function moveAlien(){
+	// add function here to move alien
+	if (direction == 0) {		// go right
+		movecood += 0.1;
+		for (var i=0; i < alienList.length; i++){
+			alienList[i].x += 0.1;
+		}		
+		if (movecood >= 100){
+			direction = 1;		// turn left
+			for (var i=0; i < alienList.length; i++){
+				alienList[i].y += 10; // move down
+			}
+		}
+	} 
+}
+--------------------------------------------
+part 4 answer:
+
+line 180:
+phase 1:
+else if (direction == 1) {// go left
+		movecood -= 0.1;
+		for (var i=0; i < alienList.length; i++){
+			alienList[i].x -= 0.1;
+		}
+	}
+
+phase 2:
+else if (direction == 1) {// go left
+		movecood -= 0.1;
+		for (var i=0; i < alienList.length; i++){
+			alienList[i].x -= 0.1;
+		}
+		if (movecood <= 50){
+			direction = 0;		// turn right
+			for (var i=0; i < alienList.length; i++){
+				alienList[i].y += 10;
+			}
+		}
+	}
+--------------------------------------------
+part 5 answer:
+line 170:
+	for (var i=0; i < alienList.length; i++){
+		if (alienList[i].x > 1000) {
+			alienList[i].x -= (Math.floor((Math.random()*10)+1));
+		}
+		if (alienList[i].x < 10) {
+			alienList[i].x += (Math.floor((Math.random()*10)+1));
+		}
+
+		if (alienList[i].y < 10) {
+			alienList[i].y += (Math.floor((Math.random()*10)+1)) / 10;
+		}
+
+		if (Math.round(Math.random()) == 1){
+			alienList[i].x += (Math.floor((Math.random()*10)+1)) / 4;
+		} else {
+			alienList[i].x -= (Math.floor((Math.random()*10)+1)) / 4;
+		}
+
+		if (Math.round(Math.random()) == 1){
+			alienList[i].y += (Math.floor((Math.random()*10)+1)) / 9;
+		} else {
+			alienList[i].y -= (Math.floor((Math.random()*10)+1)) / 10;
+		}
+	}
+
